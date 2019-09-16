@@ -224,8 +224,6 @@ public class Client extends Thread{
 		}
 	}
 
-	//해창센세 이거 쓰세요 일단...
-	//근데 데이터가 만약 늦게 들올때 걱정되네요.. time
 	public Packet getCurrentPacket() {
 		Packet packet = this.current_packet;
 		this.current_packet = null;

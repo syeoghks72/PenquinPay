@@ -1,0 +1,67 @@
+--------------------------------------------------------
+--  파일이 생성됨 - 월요일-9월-16-2019   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table SIGNUP
+--------------------------------------------------------
+
+  CREATE TABLE "SCOTT"."SIGNUP" 
+   (	"NAME" VARCHAR2(30 BYTE), 
+	"EMAIL" VARCHAR2(40 BYTE), 
+	"PASSWORD" VARCHAR2(40 BYTE), 
+	"PHONE" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into SCOTT.SIGNUP
+SET DEFINE OFF;
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('기원우','kww888@naver.com','a123123','010-4761-1427');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('김종윤','kjyun1903@naver.com','b123123','010-2949-1904');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('김길동','kjyun1904@naver.com','c123123','010-3949-1904');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('최길동','kjyun1905@naver.com','d123123','010-4949-1904');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('나길동','kjyun1906@naver.com','e123123','010-6949-1904');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('이길동','kjyun1907@naver.com','f123123','010-7949-1904');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('염길동','kjyun1908@naver.com','g123123','010-8949-1904');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('왕길동','kjyun1909@naver.com','h123123','010-9949-1904');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('황길동','kjyun1910@naver.com','i123123','010-0949-1904');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('박길동','kjyun1911@naver.com','j123123','010-1949-1904');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('김머환','ajghksajghks@naver.com','aa123','010-7777-7777');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('해창쓰','gockdtm@naver.com','bb123','010-7877-7777');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('박소영','qkrthdud@naver.com','cc123','010-9877-7777');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('백성애','blackswan@naver.com','dd123','010-1588-7777');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('왕부자','dhkdqnwk@naver.com','ee123','010-1518-7777');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('나거지','skrjwl@naver.com','ff123','010-1518-9977');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('이순신','josun@naver.com','aa123123','010-5473-9993');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('testName','testEmail','testPassword','setPhone');
+Insert into SCOTT.SIGNUP (NAME,EMAIL,PASSWORD,PHONE) values ('구대환','syeoghks72@naver.com','qwer12!@','01082223585');
+--------------------------------------------------------
+--  DDL for Index SYS_C007170
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SCOTT"."SYS_C007170" ON "SCOTT"."SIGNUP" ("EMAIL") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C007163
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SCOTT"."SYS_C007163" ON "SCOTT"."SIGNUP" ("NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table SIGNUP
+--------------------------------------------------------
+
+  ALTER TABLE "SCOTT"."SIGNUP" ADD PRIMARY KEY ("EMAIL")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+ 
+  ALTER TABLE "SCOTT"."SIGNUP" MODIFY ("EMAIL" NOT NULL ENABLE);

@@ -49,7 +49,7 @@ public class Controller implements ActionListener, MouseListener, ListSelectionL
 
     public Controller(){
         client = new Client();
-        client.InitClient("192.168.0.89",7700);
+        client.InitClient("192.168.1.47",7700);
         client.startClient();
 
         System.out.println("Server Connected");
@@ -220,11 +220,6 @@ public class Controller implements ActionListener, MouseListener, ListSelectionL
 
         // signUp confirmBtn (move SignInPage)
         else if(e.getSource() == signUp.getConfirmBtn()){
-            System.out.println(signUp.getName());
-            System.out.println(signUp.getPw());
-            System.out.println(signUp.getEmail());
-            System.out.println(signUp.getPhoneNumber());
-
             currentPage = "signIn";
             pageOrder.push(currentPage);
             if(signUp.getPw().equals(signUp.getPwCheck())) {
@@ -320,19 +315,22 @@ public class Controller implements ActionListener, MouseListener, ListSelectionL
         		pk.setDataObject(null);
         		try {
         			client.sendMessage(pk);
-        			
-        			Thread.sleep(500);
+        			Thread.sleep(1500);
 	        		Packet data = client.getCurrentPacket();
     				ArrayList<Object> ar = data.getDataObject();
-    				ArrayList<JPanel> jPanels = new ArrayList<JPanel>();
+    				TimeLinePanel timeLinePanel = new TimeLinePanel();
+    				mainPanel.setTimeLinePanel(timeLinePanel);
+    				JScrollPane timeline = mainPanel.getTimeLine();
+    				mainPanel.getCenter().remove(timeline);
+    				timeline = mainPanel.makePanelForCenter(timeLinePanel);    				
+    				mainPanel.getCenter().add("timeLine", timeline);
+    				
     				TimeLinePanel timelinePanel = mainPanel.getTimeLinePanel();
     				for(int i = 0 ; i < ar.size() ; i++) {
-    					
     					TimeLineObject timelineObject = (TimeLineObject)ar.get(i);
     					String money = "";
     					String myName = "";
     					String yourName = "";
-    							
     					if(timelineObject.getSentmoney()!=null) {
     						money = "-" + ((TimeLineObject)ar.get(i)).getSentmoney() + "원";
     						myName = "내 입출력 계좌";
@@ -343,18 +341,15 @@ public class Controller implements ActionListener, MouseListener, ListSelectionL
     						myName = ((TimeLineObject)ar.get(i)).getTrader();
     						yourName = "내 입출력 계좌";
     					}
-    					
     					String whendate = ((TimeLineObject)ar.get(i)).getWhentime();
-    						
-    					jPanels.add(timelinePanel.makeDataPanel(money, myName, yourName, whendate));
-    					timelinePanel.addDataPanel2(jPanels, i, i*2+1);
+    					timelinePanel.addDataPanel3(timelinePanel.makeDataPanel(money, myName, yourName, whendate), i*2+1);
+    					 
     				}
         		}
         
         		catch(Exception ex) {
         			ex.printStackTrace();
         		}
-            	
                 this.moveMainPage(2);
                 currentPage = "timeLine";
                 pageOrder.push(currentPage);
@@ -372,7 +367,7 @@ public class Controller implements ActionListener, MouseListener, ListSelectionL
         		pk.setDataObject(null);
         		try {
         			client.sendMessage(pk);
-        			Thread.sleep(2000);
+        			Thread.sleep(500);
 	        		Packet data2 = client.getCurrentPacket();
     				ArrayList<Object> ar = data2.getDataObject();
     				MyPagePanel myPagePanel = mainPanel.getMyPage();
@@ -380,7 +375,6 @@ public class Controller implements ActionListener, MouseListener, ListSelectionL
     					myPagePanel.getMyName().setText(((MypageObject)ar.get(i)).getName());
     					myPagePanel.getPhoneNumber().setText(((MypageObject)ar.get(i)).getPhone());
     					myPagePanel.getSpentMoney().setMoney(((MypageObject)ar.get(i)).getMoney());
-    					System.out.println(((MypageObject)ar.get(i)).getName());
     				}
         		}
         		catch(Exception ex) {
@@ -473,19 +467,11 @@ public class Controller implements ActionListener, MouseListener, ListSelectionL
 
         // movePage addCardPage
         else if(e.getSource() == mainPanel.getMyPage().getAddCardButton()){
-            System.out.println("cardConnetcPage");
             mainPanel.changeCenterPanel(5);
         }
 
         // addCardBtn
         else if(e.getSource() == cardConnectPanel.getConfirm()){
-            System.out.println(cardConnectPanel.getSelectedBank());
-            System.out.println(cardConnectPanel.getCardNumber());
-            System.out.println(cardConnectPanel.getExpiration());
-            System.out.println(cardConnectPanel.getCvc());
-            System.out.println(cardConnectPanel.getPw());
-            System.out.println("addCard Success");
-            
     		Packet pk = new Packet();
     		pk.setFrom("client");
     		pk.setTo("server");

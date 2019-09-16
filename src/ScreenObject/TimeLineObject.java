@@ -47,4 +47,11 @@ public class TimeLineObject implements Serializable{
 	public void setWhentime(String whentime) {
 		this.whentime = whentime;
 	}
+
+	@Override
+	public String toString() {
+		return "TimeLineObject [trader=" + trader + ", sentmoney=" + sentmoney + ", receivemoney=" + receivemoney
+				+ ", whentime=" + whentime + "]";
+	}
+	
 }

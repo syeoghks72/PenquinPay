@@ -239,6 +239,7 @@ public class ParsingPacket {
 			try {
 				pk.setDataObject(dao.getTimeLineObjects(clientHandler.getEmail()));
 				clientHandler.sendMessage(pk);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

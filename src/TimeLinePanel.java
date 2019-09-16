@@ -41,6 +41,16 @@ public class TimeLinePanel extends JPanel{
         Controller.locateXY(gbc, 0, y+1, 1, 1);
         this.add(new JLabel(" "), gbc);
     }
+    
+    public void addDataPanel3(JPanel jPanel, int y){
+        Controller.locateXY(gbc, 0, y, 1, 1);
+        this.add(jPanel,gbc);
+        Controller.locateXY(gbc, 0, y+1, 1, 1);
+     
+        this.add(new JLabel(" "), gbc);
+    }
+    
+    
 
     public JPanel makeDataPanel(String money, String card, String destination, String date){
         JPanel data = new JPanel();

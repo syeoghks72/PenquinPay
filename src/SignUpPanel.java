@@ -40,8 +40,6 @@ public class SignUpPanel extends JPanel {
         email = new SignUpInputField(1, "이메일을 입력하세요", "images/signup/signup_icon_id.png");
         phoneNumber = new SignUpInputField(1, "휴대폰 번호를 입력하세요", "images/signup/signup_icon_phone.png");
 
-
-
         Controller.locateXY(gbc, 0, 0, 1,1);
         temp.add(requiredTitle, gbc);
 

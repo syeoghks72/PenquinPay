@@ -219,7 +219,6 @@ public class Dao {
 
 		int later_money =remaining_balance-Integer.parseInt(money);
 		
-		System.out.println("later_money : " + later_money);
 		if(later_money > 0) {	//잔액이 송금액 보다 많아야 송금 실행
 			//상대 데이터 뽑기
 			sql = "select a.accnum youraccnum, a.email email, s.name yourname, a.money yourmoney "

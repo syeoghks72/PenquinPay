@@ -129,6 +129,15 @@ public class MainPanel extends JPanel {
 	public void setTimeLinePanel(TimeLinePanel timeLinePanel) {
 		this.timeLinePanel = timeLinePanel;
 	}
+
+	public JScrollPane getTimeLine() {
+		return timeLine;
+	}
+
+	public void setTimeLine(JScrollPane timeLine) {
+		this.timeLine = timeLine;
+	}
+	
 	
 
 }
