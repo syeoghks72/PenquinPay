@@ -21,7 +21,7 @@
 ### 3.1. 환경 세팅
 - OS : Windows 10
 - DB : Oracle 11g
-- Language : Java 1.8
+- Language : Java
 ### 3.2. 실행 방법
 ```
 1.Bank패키지의 DBUtil.java 파일의 url을 환경에 맞게 수정합니다.
@@ -34,5 +34,5 @@
 
 ## 4. 실행 영상
 ### 4.1. 실행 영상
- [![video](./PenquinPayYoutube.png)](https://www.youtube.com/watch?v=DOAdU89H_Y8&feature=youtu.be)
+ [![video](./PenquinPayYoutube.PNG)](https://www.youtube.com/watch?v=DOAdU89H_Y8&feature=youtu.be)
  
