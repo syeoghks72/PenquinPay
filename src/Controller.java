@@ -49,7 +49,7 @@ public class Controller implements ActionListener, MouseListener, ListSelectionL
 
     public Controller(){
         client = new Client();
-        client.InitClient("192.168.1.47",7700);
+        client.InitClient("192.168.0.89",7700);
         client.startClient();
 
         System.out.println("Server Connected");
