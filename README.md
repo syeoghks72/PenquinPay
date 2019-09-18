@@ -1,8 +1,8 @@
-# Vsearch
+# PenquinPay
 ——————
 ## 1. 목차
 ```
-.Vsearch
+.PenquinPay
 ├── 1.목차
 ├── 2.개요
 ├── 3.사용법
